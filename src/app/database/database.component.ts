@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
 
 // Interface gibt Struktur vor
 interface Dish {
@@ -12,7 +16,7 @@ interface Dish {
 @Component({
   selector: 'app-database',
   standalone: true,
-  imports: [],
+  imports: [MatButtonModule, MatCardModule, MatIconModule, MatDividerModule],
   templateUrl: './database.component.html',
   styleUrl: './database.component.scss',
 })
@@ -24,7 +28,7 @@ export class DatabaseComponent {
       description:
         'Classic pizza with tomato sauce, mozzarella, and fresh basil.',
       price: 8.99,
-      image: 'https://example.com/images/margherita.jpg',
+      image: '/assets/bowl-1842294_1280.jpg',
       amount: 1,
     },
     {
@@ -32,7 +36,7 @@ export class DatabaseComponent {
       description:
         'Traditional Italian pasta with creamy sauce, bacon, and Parmesan cheese.',
       price: 10.49,
-      image: 'https://example.com/images/carbonara.jpg',
+      image: '/assets/bowl-1842294_1280.jpg',
       amount: 1,
     },
     {
@@ -40,7 +44,7 @@ export class DatabaseComponent {
       description:
         'Fresh romaine lettuce with Caesar dressing, croutons, and Parmesan cheese.',
       price: 7.99,
-      image: 'https://example.com/images/caesar_salad.jpg',
+      image: '/assets/bowl-1842294_1280.jpg',
       amount: 1,
     },
     {
@@ -48,7 +52,7 @@ export class DatabaseComponent {
       description:
         'Grilled chicken breast with lettuce, tomato, and house-made aioli on a toasted bun.',
       price: 9.99,
-      image: 'https://example.com/images/chicken_burger.jpg',
+      image: '/assets/bowl-1842294_1280.jpg',
       amount: 1,
     },
   ];
