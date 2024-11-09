@@ -1,0 +1,8 @@
+<section class="container">
+  @for (item of lieferandoMenu; track item) {
+   <h2>{{ item.name }}</h2>
+   <img src="{{ item.image }}" />
+   <p>{{ item.description }}</p>
+   <p>{{ item.price }}</p>
+  }
+</section>
