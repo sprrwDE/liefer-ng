@@ -1,1 +1,9 @@
-<p>dialog works!</p>
+<section *ngFor="let item of filteredMenu; let i = index">
+  <div>
+    <h1 mat-dialog-title>{{ item.name }}</h1>
+    <div mat-dialog-content>{{item.amount}}</div>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close>Close</button>
+    </div>
+  </div>
+</section>

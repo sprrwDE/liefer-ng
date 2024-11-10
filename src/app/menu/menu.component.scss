@@ -11,6 +11,18 @@
             width: 100%;
         }
       }
+      >.added-text {
+        color: green;
+        font-size: 14px;
+        margin-top: 8px;
+        animation: fadeOut 2s forwards;
+      }
+      
+      @keyframes fadeOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+      
 }
   
   .example-header-image {
@@ -19,4 +31,3 @@
   }
   
 
-  

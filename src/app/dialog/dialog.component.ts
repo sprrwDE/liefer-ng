@@ -1,19 +1,23 @@
 import { Component } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { DatabaseService, Dish } from '../models/db';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'dialog-content-example-dialog',
   standalone: true,
-  imports: [MatDialogModule, MatButtonModule],
-  template: `
-    <h1 mat-dialog-title>Dialog</h1>
-    <div mat-dialog-content>This is a simple dialog</div>
-    <div mat-dialog-actions>
-      <button mat-button mat-dialog-close>Close</button>
-    </div>
-  `,
+  imports: [MatDialogModule, MatButtonModule, CommonModule],
+  templateUrl: './dialog.component.html',
 })
 export class DialogComponent {
+  filteredMenu: Dish[] = [];
 
+  constructor(private databaseService: DatabaseService) {
+    this.filteredMenu = this.getItemsWithAmount();
+  }
+
+  getItemsWithAmount(): Dish[] {
+    return this.databaseService.getMenu().filter(dish => dish.amount > 0);
+  }
 }

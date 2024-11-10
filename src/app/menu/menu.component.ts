@@ -9,12 +9,19 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [MatButtonModule, MatCardModule, MatIconModule, MatDividerModule, CommonModule],
+  imports: [
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatDividerModule,
+    CommonModule,
+  ],
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
   menuItems: Dish[] = [];
+  isAdded: number | null = null;
 
   constructor(private databaseService: DatabaseService) {
     this.menuItems = this.databaseService.getMenu();
@@ -22,6 +29,11 @@ export class MenuComponent {
 
   addToBasket(i: number) {
     this.menuItems[i].amount++;
+    this.isAdded = i;
     console.log(this.menuItems[i].amount);
+
+    setTimeout(() => {
+      this.isAdded = null;
+    }, 2000);
   }
 }
