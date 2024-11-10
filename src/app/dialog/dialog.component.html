@@ -3,7 +3,14 @@
     <h1 mat-dialog-title>{{ item.name }}</h1>
     <div mat-dialog-content>{{item.amount}}</div>
     <div mat-dialog-actions>
-      <button mat-button mat-dialog-close>Close</button>
+        <button (click)="addToBasket(filteredMenu, i)" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+            <mat-icon >add</mat-icon>
+          </button>
+          <button (click)="removeFromBasket(filteredMenu, i)" mat-mini-fab color="secondary" aria-label="Example icon button with a menu icon">
+            <mat-icon>remove</mat-icon>
+          </button>
+    
     </div>
   </div>
 </section>
+<button (click)="checkout()" *ngIf="filteredMenu.length > 0" mat-button mat-dialog-close>Checkout</button>

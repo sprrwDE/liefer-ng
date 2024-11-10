@@ -4,7 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { DatabaseService, Dish } from '../models/db';
-import { CommonModule } from '@angular/common'; // Import CommonModule
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-menu',
@@ -27,10 +27,10 @@ export class MenuComponent {
     this.menuItems = this.databaseService.getMenu();
   }
 
-  addToBasket(i: number) {
-    this.menuItems[i].amount++;
+  addToBasket(arr: Dish[], i: number) {
+    arr[i].amount++;
     this.isAdded = i;
-    console.log(this.menuItems[i].amount);
+    console.log(arr[i].amount);
 
     setTimeout(() => {
       this.isAdded = null;
