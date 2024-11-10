@@ -17,7 +17,7 @@ import { DialogComponent } from './dialog/dialog.component';
     MatIconModule,
     MatDividerModule,
     MatDialogModule,
-    DialogComponent 
+    DialogComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
