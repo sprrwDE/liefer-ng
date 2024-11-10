@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { DatabaseComponent } from './database/database.component';
+import { MenuComponent } from './menu/menu.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
@@ -12,7 +12,7 @@ import { DialogComponent } from './dialog/dialog.component';
   standalone: true,
   imports: [
     RouterOutlet,
-    DatabaseComponent,
+    MenuComponent,
     MatButtonModule,
     MatIconModule,
     MatDividerModule,

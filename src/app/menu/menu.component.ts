@@ -9,10 +9,10 @@ import { DatabaseService, Dish } from '../models/db';
   selector: 'app-database',
   standalone: true,
   imports: [MatButtonModule, MatCardModule, MatIconModule, MatDividerModule],
-  templateUrl: './database.component.html',
-  styleUrls: ['./database.component.scss'],
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss'],
 })
-export class DatabaseComponent {
+export class MenuComponent {
   menuItems: Dish[] = [];
 
   constructor(private databaseService: DatabaseService) {
